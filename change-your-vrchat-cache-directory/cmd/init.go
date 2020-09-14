@@ -20,4 +20,7 @@ func init() {
 	if strings.Contains(appdata, "\\Roaming") {
 		appdata = filepath.Dir(appdata)
 	}
+	cfd = filepath.Join(appdata, "LocalLow\\VRChat\\VRChat\\config.json")
+	rootCmd.PersistentFlags().StringVarP(&configFile, "config", "c", "", "VRChat config.json")
+	rootCmd.PersistentFlags().StringVarP(&cacheDirectory, "cache", "d", "", "Cache Directory")
 }
